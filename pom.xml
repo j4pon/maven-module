@@ -11,5 +11,7 @@
 		<module>Des1</module>
 		<module>Des2</module>
 		<module>Web2</module>
+		<module>Ear</module>
 	</modules>
+	
 </project>

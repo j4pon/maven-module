@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Ear-0.1-SNAPSHOT">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
+        <dependent-module archiveName="Des1-0.1-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/Des1/Des1">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Des2-0.1-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/Des2/Des2">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Web2-0.1-SNAPSHOT.war" deploy-path="/" handle="module:/resource/Web2/Web2">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ojdbc6-11.2.0.2.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/com/oracle/ojdbc6/11.2.0.2/ojdbc6-11.2.0.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ucp-11.2.0.2.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/com/oracle/jdbc/ucp/11.2.0.2/ucp-11.2.0.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ojdbc7-12.1.0.2.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/com/oracle/ojdbc7/12.1.0.2/ojdbc7-12.1.0.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

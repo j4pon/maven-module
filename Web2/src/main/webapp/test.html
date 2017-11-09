@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="webjars/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+<title>Demo RestEasy Ripley</title>
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<div class="row">
+				<h1>STF</h1>
+			</div>
+			<div>
+				<div class="form-group">
+					<label for="sel1">Servicios:</label> <select class="form-control"
+						id="sel1" name="selector">
+						<option value="0">compras</option>
+						<option value="1">retiro</option>
+						<option value="2">consultasaldos</option>
+						<option value="3">consultamovimientos</option>
+						<option value="4">cambiarpin</option>
+						<option value="5">validapin</option>
+						<option value="6">Test</option>
+						<option value="7">Test Pool</option>
+					</select>
+				</div>
+
+			</div>
+		</div>
+
+	</header>
+	<section>
+		<div class="container">
+			<div class="row">
+				<form id="mensaje">
+					<div class="col-md-5">
+
+						<div class="form-group row">
+							<label for="example-text-input" class="col-md-2 col-form-label">Id</label>
+							<div class="col-md-10">
+								<input class="form-control" type="number" name="id" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="example-search-input" class="col-md-2 col-form-label">Type</label>
+							<div class="col-md-10">
+								<input class="form-control" type="text" name="type" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="example-search-input" class="col-md-2 col-form-label">Version</label>
+							<div class="col-md-10">
+								<input class="form-control" type="text" name="version" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="example-email-input" class="col-md-2 col-form-label">Source</label>
+							<div class="col-md-10">
+								<input class="form-control" type="text" name="source" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="example-url-input" class="col-md-2 col-form-label">Target</label>
+							<div class="col-md-10">
+								<input class="form-control" type="text" name="target" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="example-tel-input" class="col-md-2 col-form-label">Opcode</label>
+							<div class="col-md-10">
+								<input class="form-control" type="text" name="opcode" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="example-password-input"
+								class="col-md-2 col-form-label">Timestamp</label>
+							<div class="col-md-10">
+								<input class="form-control" type="text" id="date"
+									name="timestamp" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="example-number-input" class="col-md-2 col-form-label">Trace</label>
+							<div class="col-md-10">
+								<input class="form-control" type="text" name="trace" required>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label for="example-number-input" class="col-md-2 col-form-label">Status</label>
+							<div class="col-md-10">
+								<input class="form-control" type="text" name="status" required>
+							</div>
+						</div>						
+
+					</div>
+					<div class="col-md-6 col-offset-md-1">
+						<a id="agregarCampo" class="btn btn-info" href="#"><span
+							class="glyphicon glyphicon-plus"></span>Data</a>
+						<hr>
+						<div id="contenedor">
+							<div class="form-group row cnt">
+								<label for="example-text-input" class="col-md-2 col-form-label">Bit</label>
+								<div class="col-md-4">
+									<input class="form-control" type="text" name="bit[]" required>
+								</div>
+								<label for="example-text-input" class="col-md-2 col-form-label">Value</label>
+								<div class="col-md-4">
+									<input class="form-control" type="text" name="value[]" required>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary">Enviar</button>
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+	</section>
+
+	<hr>
+
+	<!--Enviar mensaje compra
+	<button id="comprar">POST</button>
+	<hr>
+	-->
+	<div id="respuesta"></div>
+
+	<script type="text/javascript"
+		src="webjars/jquery/3.1.0/dist/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/serialize.js"></script>
+
+	<script>
+
+		var project = "/Web2;"
+		var op = [ "compras", "retiro", "consultasaldos",
+				"consultamovimientos", "cambiarpin", "validapin", "msg", "oci" ];
+		
+		var html = "<div class=\"form-group row cnt\">"
+				+ "<label for=\"example-number-input\" class=\"col-md-2 col-form-label\">Bit</label>"
+				+ "<div class=\"col-md-4\">"
+				+ "	<input class=\"form-control\" type=\"text\" name=\"bit[]\" required>"
+				+ "</div>"
+				+ "<label for=\"example-number-input\" class=\"col-md-2 col-form-label\">Value</label>"
+				+ "<div class=\"col-md-4\">"
+				+ "	<input class=\"form-control\" type=\"text\" name=\"value[]\" required>"
+				+ "</div>";
+		//var x = número de campos existentes en el contenedor
+		var x = $("#contenedor div.cnt").length;
+		var FieldCount = x - 1; //para el seguimiento de los campos
+		var MaxInputs = 8; //Número Maximo de Campos
+		var contenedor = $("#contenedor"); //ID del contenedor
+		var AddButton = $("#agregarCampo"); //ID del Botón Agregar
+		$(AddButton).click(function(e) {
+			if (x <= MaxInputs) //max input box allowed
+			{
+				FieldCount++;
+				//agregar campo
+				$(contenedor).append(html);
+				x++; //text box increment
+			}
+			return false;
+		});
+		$("#mensaje").submit(function(e) {
+			try {
+				var data = $(this).serializeObject();
+				var d = new Array();
+				if (typeof (data["bit[]"]) == "string") {
+					var dt = {
+						bit : data["bit[]"],
+						value : data["value[]"]
+					};
+					d.push(dt);
+				} else {
+					d = new Array();
+					for (i = 0; i < data["bit[]"].length; i++) {
+						d.push({
+							bit : data["bit[]"][i],
+							value : data["value[]"][i]
+						});
+					}
+				}
+				
+				var sel = $("#sel1").val();
+				//console.log($('select[name=selector]').val());
+				//console.log($('select[id=sel1]').val());
+				data.data = d;
+				delete data["bit[]"];
+				delete data["value[]"];
+				var dataNew = {}
+				if(sel >= '6'){
+					$.each(data.data, function(key, value){
+						dataNew[value.bit] = value.value;
+					})
+					delete data["data"];
+					data.data = dataNew;
+					
+				}
+				
+				var data_ = JSON.stringify(data);
+				$.ajax({
+					url : project+"/rs/"+op[sel]+"/post",
+					contentType : "application/json",
+					data : data_,
+					type : "post",
+					dataType : "json",
+					cache : false,
+					success : function(data) {
+						var res = JSON.stringify(data, undefined, 2);
+						var html = "<pre>" + res + "</pre>";
+						$("#respuesta").empty();
+						$("#respuesta").append(html);
+					},
+					failure : function(errMsg) {
+						alert(errMsg);
+					}
+				})
+				e.preventDefault();
+			} catch (e) {
+				// TODO: handle exception
+				console.log(e);
+				return false;
+			}
+		})
+	</script>
+
+</body>
+</html>
