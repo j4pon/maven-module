@@ -8,8 +8,8 @@
 	<packaging>pom</packaging>
 	<name>rest</name>
 	<modules>
-		<module>rest-web</module>
-		<module>rest-ora1</module>
-		<module>rest-ora2</module>
+		<module>Des1</module>
+		<module>Des2</module>
+		<module>Web2</module>
 	</modules>
 </project>
