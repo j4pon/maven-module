@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
+import com.pe.project.OciRest;
 import com.pe.ripley.stf.autorizacion.CompraMessageImpl;
 import com.pe.ripley.stf.autorizacion.ConsultaMovimientosMessageImp;
 import com.pe.ripley.stf.autorizacion.ConsultaSaldosMessageImpl;
@@ -25,6 +26,8 @@ public class App extends Application {
 		set.add(new ConsultaMovimientosMessageImp());
 		set.add(new ConsultaSaldosMessageImpl());
 		set.add(new RetiroMessageImpl());
+		
+		set.add(new OciRest());
         return set;
 	}	
 	

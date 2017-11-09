@@ -31,13 +31,13 @@
         $(document).ready(function () {
 
         	
-            
+            var project = "/rest-web-0.1-SNAPSHOT";//project /ripley
             $("#grid").kendoGrid({
 
             	dataSource:new kendo.data.DataSource({
             		transport: {
                         read: {
-                            url: "/ripley/rs/oci/cursor",
+                            url: project+"/rs/oci/cursor",
                             dataType: "json",
                             type: "post",
                             cache: false
