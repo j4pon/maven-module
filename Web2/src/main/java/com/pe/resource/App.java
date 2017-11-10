@@ -7,6 +7,7 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 import org.Web2.OciRest;
+import org.Web2.WebRest;
 
 import com.pe.ripley.stf.autorizacion.CompraMessageImpl;
 import com.pe.ripley.stf.autorizacion.ConsultaMovimientosMessageImp;
@@ -29,6 +30,7 @@ public class App extends Application {
 		set.add(new RetiroMessageImpl());
 		
 		set.add(new OciRest());
+		set.add(new WebRest());
         return set;
 	}	
 	
