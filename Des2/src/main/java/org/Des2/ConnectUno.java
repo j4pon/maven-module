@@ -17,12 +17,14 @@ public class ConnectUno {
 		try {
 			listCursor = new ArrayList<Cursor>();
 			
+			connectOciFisa.estadisticas();
 			Connection conJou = connectOciFisa.openConnection();
 			CallableStatement callJouR = conJou.prepareCall("{call EFT.TEST.TEST_JOURNAL(?)}");
 			callJouR.registerOutParameter(1, OracleTypes.CURSOR);
 			callJouR.execute();
 			ResultSet rsR = (ResultSet) callJouR.getObject(1);
 			while (rsR.next()) {
+				
 				Cursor cursor = new Cursor();
 				cursor.setId(rsR.getInt("ID"));
 				cursor.setDeltaPL(rsR.getString("DELTA_PL"));
@@ -32,6 +34,7 @@ public class ConnectUno {
 				listCursor.add(cursor);
 
 			}
+			connectOciFisa.estadisticas();
 			conJou.close();
 		} catch (SQLException e) {
 			System.out.println("SQL");

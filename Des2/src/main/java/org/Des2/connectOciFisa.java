@@ -14,9 +14,9 @@ public class connectOciFisa {
 
 	private static PoolDataSource pds = null;
 	private static String DRIVER = "oracle.jdbc.pool.OracleDataSource";;
-	private static String URL=  "jdbc:oracle:thin:@//50.116.21.223:1521/XE";
-	private static String USER = "eft";
-	private static String PASS = "eft";
+	public static String URL=  "jdbc:oracle:thin:@//50.116.21.223:1521/XE";
+	public static String USER = "eft";
+	public static String PASS = "eft";
 	private static String EFT_POOL= "EFTFISA";
 	private static int POOLSIZE= 5;
 	private static UniversalConnectionPoolManager mgr;
