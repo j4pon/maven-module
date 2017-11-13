@@ -1,4 +1,4 @@
-package org.Des2;
+package org.otros;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import org.Des2.connectOciFisa;
 
 import oracle.ucp.UniversalConnectionPoolException;
 

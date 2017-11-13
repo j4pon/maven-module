@@ -6,8 +6,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import org.Des2.ConnectUno;
-import org.Des2.Cursor;
+import org.otros.ConnectUno;
+import org.otros.Cursor;
 
 @Path("/oci")
 public final class OciRest {

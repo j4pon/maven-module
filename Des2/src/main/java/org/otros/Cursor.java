@@ -1,4 +1,4 @@
-package org.Des2;
+package org.otros;
 
 public class Cursor {
 	private int id;

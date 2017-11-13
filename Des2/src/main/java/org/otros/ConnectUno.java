@@ -1,4 +1,4 @@
-package org.Des2;
+package org.otros;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.Des2.connectOciFisa;
 
 import oracle.jdbc.internal.OracleTypes;
 import oracle.ucp.UniversalConnectionPoolException;

@@ -2,8 +2,8 @@ package org.Web2;
 
 import java.util.List;
 
-import org.Des2.ConnectUno;
-import org.Des2.Cursor;
+import org.otros.ConnectUno;
+import org.otros.Cursor;
 
 public class App {
 
